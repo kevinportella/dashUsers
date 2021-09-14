@@ -15,6 +15,7 @@ export function SearchBox() {
       position="relative"
       bg={useColorModeValue('gray.100', 'gray.900')}
       borderRadius="full"
+
     >
       <Input
         variant="unstyled"
@@ -22,6 +23,7 @@ export function SearchBox() {
         mr="4"
         placeholder="Buscar na Plataforma"
         _placeholder={{ color: 'gray.400' }}
+
       />
         <SearchIcon fontSize="20" color={useColorModeValue('gray.900', 'gray.400')} />
 
