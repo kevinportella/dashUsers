@@ -1,23 +1,15 @@
 import { Box, Flex, useBreakpointValue } from "@chakra-ui/react";
-import React, { useContext } from "react";
-import { ContextAPI } from "~/ContextAPI";
+import React from "react";
 import { ColorMode } from "./ColorMode";
 import { Logo } from "./Logo";
 import { Profile } from "./Profile";
 import { SearchBox } from "./SearchBox";
-
 
 export function Header() {
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true
   })
-
-  const data = useContext(ContextAPI);
-
-  console.log(data)
-
-
 
   return (
     <Box px="4" width="100%">

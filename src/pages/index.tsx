@@ -2,7 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { Header } from "~/components/Header";
 import { ModalUsers } from "~/components/Modal";
-import { Users } from "~/components/Users";
+import { Dashboard } from "~/components/Dashboard";
 
 export default function Home() {
   const [isInfoUserModalOpen, setIsInfoUserModalOpen] = useState(false)
@@ -20,7 +20,7 @@ export default function Home() {
         <Header />
 
         <Flex w="100%" my="6" maxWidth={1240} mx="auto" px="6">
-          <Users onOpenInfoUserModal={handleOpenInfoUserModal}/>
+          <Dashboard onOpenInfoUserModal={handleOpenInfoUserModal}/>
           <ModalUsers
             isOpen={isInfoUserModalOpen}
             onClose={handleCloseInfoUserModal}

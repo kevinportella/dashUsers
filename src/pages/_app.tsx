@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
 import Head from "next/head"
-import { ContextProvider } from '~/ContextAPI';
+import { ContextProvider } from '~/contexts/ContextAPI';
 
 import { theme } from '~/styles/theme';
 

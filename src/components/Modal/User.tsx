@@ -1,12 +1,7 @@
-import { Stack, Avatar, Heading, Text } from "@chakra-ui/react";
-import { useContext } from "react";
-import { ContextAPI } from "~/ContextAPI";
+import { Avatar, Heading, Stack, Text } from "@chakra-ui/react";
 
 export function User() {
 
-  const data = useContext(ContextAPI);
-
-  console.log(data)
   return (
     <Stack align="center">
       <Avatar size="2xl" name="Kevin Bohry"/>

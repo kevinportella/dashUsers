@@ -1,6 +1,5 @@
 import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useColorModeValue } from "@chakra-ui/react";
-import React, { useContext } from "react";
-import { ContextAPI } from "~/ContextAPI";
+import React from "react";
 import { InfoSection } from "./InfoSection";
 import { User } from "./User";
 
@@ -10,8 +9,6 @@ interface ModalUsersProps {
 }
 
 export function ModalUsers({ isOpen, onClose }: ModalUsersProps) {
-  const data = useContext(ContextAPI);
-
 
   return (
     <Modal
