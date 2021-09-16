@@ -1,12 +1,14 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
 import Head from "next/head"
+import { ContextProvider } from '~/ContextAPI';
 
 import { theme } from '~/styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+
     <Head>
       <title>List users </title>
 
@@ -21,7 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     </Head>
 
       <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
+        <ContextProvider>
+          <Component {...pageProps} />
+        </ContextProvider>
       </ChakraProvider>
     </>
   )
