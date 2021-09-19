@@ -1,9 +1,9 @@
 <p align="center">
-  <h1>Hello</h1>
+  <h1>Dash Users</h1>
 </p>
 
 <h1 align="center">
-    <img src='./src/assets/images/capa.png'>
+    <img src='./interface.jpg'>
 </h1>
 
 ## About: 
