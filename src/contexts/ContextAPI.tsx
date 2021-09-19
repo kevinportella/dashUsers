@@ -46,7 +46,7 @@ export function ContextProvider({children} : ContextProviderProps) {
 
   const getUsers = useCallback(async () => {
     const response = await
-      fetch(`https://randomuser.me/api/?results=5&page=${currentPage}`)
+      fetch(`https://randomuser.me/api/?results=50&page=${currentPage}`)
       .then(response => response.json());
 
       setUserList((currentState) => {
