@@ -3,33 +3,34 @@
 </p>
 
 <h1 align="center">
-    <img src='./interface.jpg'>
+  <img src='./interface.jpg'>
+  <img src='./interface_modal.jpg'>
 </h1>
 
-## About: 
+## Sobre: 
 
-letmeask is an application developed during Next Level Week Together (NLW-06) offered by [Rocketseat]🚀.
+Dash Users é o projeto de uma dashboard de controle de usuários onde você pode acessar cada usuário separadamente para obter mais informações sobre eles.
 
-Letmeask is a site where questions can be created where other people who have access to the room can answer them. Suitable for content creators. 
+Esse foi um desafio proposto pela - [coodesh](https://lab.coodesh.com/public-challenges/front-end-challenge-2021).
 
-## Technologies:
+## Tecnologias:
 
-This project was developed with the following technologies: 
+Este projeto foi desenvolvido com as seguintes tecnologias: 
 
 - [React](https://reactjs.org)
-- [Firebase](https://firebase.google.com/)
+- [NextJs](https://nextjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## How to run:
+## Como Usar:
 
-Clone the project and access the folder.
+Clone o projeto e acesse o arquivo.
 
 ```bash
-$ git clone https://github.com/kevinportella/NLW-06-Letmeask
-$ cd NLW-06-Letmeask
+$ git clone https://github.com/kevinportella/dashUsers
+$ cd dashUsers
 ```
 
-To start it, follow the steps below: 
+Para iniciá-lo, siga as etapas abaixo: 
 ```bash
 # Install dependencies
 $ yarn
@@ -37,7 +38,6 @@ $ yarn
 # Start the project 
 $ yarn start
 ```
-This project has interaction with firebase.
 
 ## License:
 
