@@ -11,7 +11,7 @@
 
 Dash Users é o projeto de uma dashboard de controle de usuários onde você pode acessar cada usuário separadamente para obter mais informações sobre eles.
 
-Esse foi um desafio proposto pela - [coodesh](https://lab.coodesh.com/public-challenges/front-end-challenge-2021).
+Esse foi um desafio proposto pela [coodesh](https://lab.coodesh.com/public-challenges/front-end-challenge-2021).
 
 ## Tecnologias:
 
@@ -41,7 +41,7 @@ $ yarn start
 
 ## License:
 
-This project is under the MIT license. See the file [LICENSE](LICENSE.md) for more details.
+Este projeto está sob a licença do MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 ---
 
