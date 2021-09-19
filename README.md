@@ -20,6 +20,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [React](https://reactjs.org)
 - [NextJs](https://nextjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
+- [ChakraUI](https://chakra-ui.com)
 
 ## Como Usar:
 
