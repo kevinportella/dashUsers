@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from "react";
 
-interface IUserResult {
+export interface  IUserResult {
   name: {
     first: string;
     last: string;
@@ -11,21 +11,23 @@ interface IUserResult {
     date: string;
   }
   phone: string;
-  country: string;
   location: {
+    country: string;
     street: {
       number: number;
       name: string;
     }
   }
-  image: string;
+  picture:{
+    large: string;
+  }
   login: {
-    salt: string;
+    uuid: string;
   }
 }
 
 interface Context {
-  userList: IUserResult[]
+  userList: IUserResult[];
   updatePage: (page: number) => void;
   currentPage: number;
 }
@@ -39,6 +41,7 @@ export const ContextAPI = createContext<Context>({} as Context)
 
 export function ContextProvider({children} : ContextProviderProps) {
   const [currentPage, setCurrentPage] = useState(1)
+  // const [search, setSearch] = useState('')
   const [userList, setUserList] = useState<IUserResult[]>([])
 
   const getUsers = useCallback(async () => {
@@ -47,11 +50,11 @@ export function ContextProvider({children} : ContextProviderProps) {
       .then(response => response.json());
 
       setUserList((currentState) => {
-        return[
+        return [
           ...currentState,
           ...response.results,
         ]
-      })
+      });
   },[currentPage])
 
   useEffect(() => {

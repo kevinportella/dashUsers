@@ -16,6 +16,7 @@
     "@types/node": "^16.9.1",
     "@types/react": "^17.0.20",
     "@types/react-modal": "^3.12.1",
+    "date-fns": "^2.24.0",
     "framer-motion": "4",
     "next": "^11.1.2",
     "react": "17.0.2",

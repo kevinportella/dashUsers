@@ -5,26 +5,16 @@ import { ModalUsers } from "~/components/Modal";
 import { Dashboard } from "~/components/Dashboard";
 
 export default function Home() {
-  const [isInfoUserModalOpen, setIsInfoUserModalOpen] = useState(false)
 
-  function handleOpenInfoUserModal () {
-    setIsInfoUserModalOpen(true);
-  }
-
-  function handleCloseInfoUserModal () {
-    setIsInfoUserModalOpen(false);
-  }
   return (
 
       <Flex direction="column" h="100vh">
         <Header />
 
         <Flex w="100%" my="6" maxWidth={1240} mx="auto" px="6">
-          <Dashboard onOpenInfoUserModal={handleOpenInfoUserModal}/>
-          <ModalUsers
-            isOpen={isInfoUserModalOpen}
-            onClose={handleCloseInfoUserModal}
-          />
+
+          <Dashboard/>
+
         </Flex>
       </Flex>
   )

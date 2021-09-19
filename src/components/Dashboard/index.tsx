@@ -1,13 +1,22 @@
 import { InfoOutlineIcon, SpinnerIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, Heading, HStack, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue, useColorModeValue } from "@chakra-ui/react";
-import React from "react";
-import { useHookContext } from '~/contexts/ContextAPI';
+import React, { useEffect, useState } from "react";
+import { IUserResult, useHookContext } from '~/contexts/ContextAPI';
+import { ModalUsers } from '../Modal';
+import { format } from 'date-fns';
+import { useRouter } from 'next/router';
 
-interface UserProps {
-  onOpenInfoUserModal: () => void;
-}
 
-export function Dashboard({ onOpenInfoUserModal } : UserProps) {
+export function Dashboard() {
+  const [ currentUser, setCurrentUser ] = useState<IUserResult | null>(null)
+  const [isInfoUserModalOpen, setIsInfoUserModalOpen] = useState(false)
+
+  const router = useRouter()
+
+  function handleCloseInfoUserModal () {
+    setIsInfoUserModalOpen(false);
+  }
+
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true
@@ -15,7 +24,18 @@ export function Dashboard({ onOpenInfoUserModal } : UserProps) {
 
   const { userList, currentPage, updatePage } = useHookContext();
 
-  console.log(userList)
+  useEffect (() => {
+    if (router.query.userUuid) {
+      fetch(`https://randomuser.me/api/?results=1&uuid=${router.query.userUuid}`)
+      .then(response => response.json())
+      .then((userData) =>  {
+        setCurrentUser(userData.results[0])
+        setIsInfoUserModalOpen(true)
+      })
+
+
+    }
+  }, [router.query])
 
   return (
     <Box flex="1" borderRadius={8} bg={useColorModeValue('gray.100', 'gray.900')} p={["2","8"]}>
@@ -35,7 +55,7 @@ export function Dashboard({ onOpenInfoUserModal } : UserProps) {
         <Tbody>
 
           {userList.map(user => (
-            <Tr key={user.login.salt}>
+            <Tr key={user.login.uuid}>
               <Td>
                 <Box>
                   <Text fontWeight="bold">{user.name.first} {user.name.last}</Text>
@@ -48,13 +68,16 @@ export function Dashboard({ onOpenInfoUserModal } : UserProps) {
                 </Box>
               </Td>
               {isWideVersion && <Td>{user.gender}</Td>}
-              {isWideVersion && <Td>{user.registered.date}</Td>}
+              {isWideVersion && <Td>{format(new Date(user.registered.date), "dd/MM/yyyy")}</Td>}
               <Td>
                 <Button
                   size="sm"
                   fontSize="sm"
                   bg="green.400"
-                  onClick={onOpenInfoUserModal}
+                  onClick={() => {
+                    setCurrentUser(user);
+                    setIsInfoUserModalOpen(true);
+                  }}
                 >
                   <HStack spacing="1">
                     <InfoOutlineIcon />
@@ -87,6 +110,13 @@ export function Dashboard({ onOpenInfoUserModal } : UserProps) {
         </Button>
 
       </Flex>
+
+      <ModalUsers
+            isOpen={isInfoUserModalOpen}
+            onClose={handleCloseInfoUserModal}
+            userData={currentUser}
+          />
+
     </Box>
   );
 }
