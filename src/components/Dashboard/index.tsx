@@ -38,12 +38,24 @@ export function Dashboard() {
   }, [router.query])
 
   return (
-    <Box flex="1" borderRadius={8} bg={useColorModeValue('gray.100', 'gray.900')} p={["2","8"]}>
-      <Flex mb="8" justify="center" align="center" >
-        <Heading size="lg" fontWeight="normal">Users</Heading>
+    <Box
+      flex="1"
+      borderRadius={8}
+      bg={useColorModeValue('gray.100',
+      'gray.900')}
+      p={["2","8"]}>
+      <Flex
+        mb="8"
+        justify="center"
+        align="center">
+        <Heading
+          size="lg"
+          fontWeight="normal">Users</Heading>
       </Flex>
 
-      <Table colorScheme={useColorModeValue('gray.900', 'gray.400')}>
+      <Table
+        colorScheme={useColorModeValue('gray.900',
+        'gray.400')}>
         <Thead>
           <Tr>
             <Th>Name</Th>

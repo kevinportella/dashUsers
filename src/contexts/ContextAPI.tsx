@@ -41,7 +41,6 @@ export const ContextAPI = createContext<Context>({} as Context)
 
 export function ContextProvider({children} : ContextProviderProps) {
   const [currentPage, setCurrentPage] = useState(1)
-  // const [search, setSearch] = useState('')
   const [userList, setUserList] = useState<IUserResult[]>([])
 
   const getUsers = useCallback(async () => {
